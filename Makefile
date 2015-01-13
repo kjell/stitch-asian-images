@@ -10,7 +10,7 @@ genji-montage.tif:
 
 genji-montage-cropped.tif:
 	convert genji-montage.tif -shave 5 genji-montage-cropped.tif
-	vipsthumbnail --size=1000 genji-montage.tif
+	vipsthumbnail --size=1000 genji-montage-cropped.tif
 
 # Kanō Sanraku, Rice Farming in the Four Seasons
 # The William Hood Dunwoody Fund and Gift of funds from Louis W. Hill, Jr.
