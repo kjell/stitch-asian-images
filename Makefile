@@ -18,13 +18,13 @@ genji-montage-cropped.tif:
 
 rice-trimmed-resized:
 	convert mia_6015* -bordercolor black -border 1 \
-		-fuzz 80% -trim -resize 4000 \
+		-fuzz 80% -trim -resize 4500 \
 		-set filename:fname '%t-trimmed-resized' +adjoin '%[filename:fname].tif'
 	rm mia_6015695-trimmed-resized.tif
 	mkdir -p rice-trimmed-resized
 	mv *trimmed-resized.tif rice-trimmed-resized/
 
 rice: rice-trimmed-resized
-	montage rice-trimmed-resized/*.tif -background black -bordercolor black \
+	montage rice-trimmed-resized/*.tif -verbose -background black -bordercolor black \
 		-mode concatenate -tile 8x2 -border 5 rice.tif
 	vipsthumbnail --size=1000 rice.tif
